@@ -1,0 +1,16 @@
+version: '2'
+services:
+  monitor:
+    build: monitor
+    volumes:
+      # config file to be monitored
+      - ${PWD}/test:/usr/src/app/test
+      - /var/run/docker.sock:/var/run/docker.sock
+  app:
+    build: app
+    ports:
+      # port to serve config file
+      - 8080:8080
+    volumes:
+      # serve config file to prove that the modification works
+      - ${PWD}/test:/usr/src/app/public/test
