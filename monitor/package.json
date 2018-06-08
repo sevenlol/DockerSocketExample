@@ -1,0 +1,11 @@
+{
+    "name": "monitor",
+    "version": "0.0.1",
+    "main" : "monitor.js",
+    "scripts": {
+        "start": "node monitor.js"
+    },
+    "dependencies": {
+        "dockerode": "^2.5.5"
+    }
+}
